@@ -1,4 +1,6 @@
-@extends('layouts.app') @section('content')
+@extends('layouts.app')
+
+@section('head')
 <style>
   .splash {
     background-image: url('/images/home_bg.png');
@@ -16,7 +18,7 @@
   }
 
   .services {
-    background-color: #D5D7D8;
+    background-color: #11274B;
   }
 
   .services-box {
@@ -34,49 +36,52 @@
   }
 
 </style>
+@stop
+
+@section('content')
 <div class="splash">
-    <img src="/images/spacer.gif" height="154px">
+    <img alt="spacer" src="/images/spacer.gif" height="154">
     <Br>
-    <img class="prof_tag" src="/images/prof_support.gif">
+    <img alt="Professional Support" class="prof_tag" src="/images/prof_support.gif">
     <Br>
-    <img src="/images/spacer.gif" height="308px">
-    <img src="/images/red_tagline.gif">
+    <img alt="spacer" src="/images/spacer.gif" height="308">
+    <img alt="Fast Friendly Reliable Onsite Support" src="/images/red_tagline.gif">
 </div>
 
 <div class="row services">
   <div class="col-md-12">
-    <img src="/images/spacer.gif" height="20px">
+    <img alt="spacer" src="/images/spacer.gif" height="20">
   </div>
 </div>
 <div class="row services">
   <div class="col-md-3 boxed-title">
-    <img src="/images/spacer.gif" width="20px"> Specialising&nbsp;in:
+    <img alt="spacer" src="/images/spacer.gif" width="20"> Specialising&nbsp;in:
   </div>
 </div>
 <div class="row services">
   <div class="col-md-2 col-md-offset-1 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/virus removal.png">
+      <img alt="Virus Removal Service" width="147" height="86" src="/images/sv_virus_removal.png">
     </div>
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/cloud services.png">
+      <img alt="Cloud Services" width="147" height="86" src="/images/sv_cloud_services.png">
     </div>
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/troubleshooting.png">
+      <img alt="Troubleshooting Service" width="147" height="86" src="/images/sv_troubleshooting.png">
     </div>
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/secure back up.png">
+      <img alt="Secure Backup Service" width="147" height="86" src="/images/sv_secure_backup.png">
     </div>
   </div>
   <div class="col-md-3 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/user staff.png">
+      <img alt="Staff/User Training Service" width="147" height="86" src="/images/sv_user_staff.png">
     </div>
   </div>
 </div>
@@ -85,35 +90,35 @@
     <div class="col-md-2 col-md-offset-1 services">
     <div class="services-box">
       <a href="/services/email">
-      <img width="147" height="86" src="/images/email issues.png">
+      <img alt="Email Issues" width="147" height="86" src="/images/sv_email_issues.png">
       </a>
     </div>
     </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/new computer sales.png">
+      <img alt="New Computer Sales" width="147" height="86" src="/images/sv_new_computer_sales.png">
     </div>
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/tablet and mobile set up.png">
+      <img alt="Tablet and Mobile Setup" width="147" height="86" src="/images/sv_tablet_and_mobile_setup.png">
     </div>
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/web design.png">
+      <img alt="Web Design Service" width="147" height="86" src="/images/sv_web_design.png">
     </div>
   </div>
   <div class="col-md-3 services">
     <div class="services-box">
-      <img width="147" height="86" src="/images/printer set up.png">
+      <img alt="Printer Setup" width="147" height="86" src="/images/sv_printer_setup.png">
     </div>
   </div>
 </div>
 
 <div class="row services">
   <div class="col-md-12">
-    <img src="/images/spacer.gif" height="30px">
+    <img alt="spacer" src="/images/spacer.gif" height="30">
   </div>
 </div>
 

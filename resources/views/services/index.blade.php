@@ -1,6 +1,74 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>Home Services</h1>
+<div class="row">
+    <div class="col-md-5">
+        <img alt="Fast Reliable Friendly Onsite Support" src="/images/services.png">
+    </div>
+    <div class="col-md-7">
+        <h3>Home Services</h3>
+        We can help with everything from troubleshooting, diagnosing, building, servicing, maintaining
+        and repairing any brand of desktops and laptops<br>
+        <br>
+        <ul>
+        <div class="row">
+            <div class="col-md-6">
+                    <li>Mac or PC</li>
+                    <li>Email Issues</li>
+                    <li>Troubleshooting</li>
+                    <li>User support and training</li>
+                    <li>Secure backup</li>
+                    <li>Internet/Wifi</li>
+            </div>
+            <div class="col-md-6">
+                    <li>Tablet and mobile set up</li>
+                    <li>Virus removal &amp; protection</li>
+                    <li>Printer set up</li>
+                    <li>New computer sales &amp; set up</li>
+                    <li>Photos - sharing accesing &amp; storing them securely</li>
+            </div>
+        </div>
+    </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <img alt="spacer" src="/images/spacer.gif" height="40">
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-8">
+
+        <div class="row">
+          <div class="col-md-6">
+            <img alt="Virus Removal and Protection" src="/images/svh_virus.png"><br>
+            <br>
+            <img alt="Email Issues" src="/images/svh_email.png"><Br>
+            <br>
+            <img alt="Troubleshooting" src="/images/svh_troubl.png"><br>
+            <br>
+            <img alt="Tablet and Mobile Setup and Training" src="/images/svh_tablet.png"><br>
+            <br>
+            <img alt="New Computer Sales and Setup" src="/images/svh_new_comp.png"><br>
+            <br>
+          </div>
+          <div class="col-md-6">
+            <img alt="User Support and Training" src="/images/svh_user.png"><br>
+            <Br>
+            <img alt="Secure Backup" src="/images/svh_secure.png"><Br>
+            <br>
+            <img alt="Photos-Storing and Sharing" src="/images/svh_photos.png"><br>
+            <br>
+            <img alt="Printer Setup" src="/images/svh_printer.png"><br>
+            <br>
+            <img alt="Internet Connection" src="/images/svh_internet.png"><br>
+            <br>
+          </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        @include('includes.contact')
+    </div>
+</div>
 
 @stop

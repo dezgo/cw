@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class ComponentTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,7 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(ComponentCategoryTableSeeder::class);
-        $this->call(ComponentTableSeeder::class);
+        factory(App\Component::class, 150)->create();
     }
 }

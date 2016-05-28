@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Mail;
+use App\ComponentCategory;
+use App\SystemComponent;
+use App\System;
+use App\Component;
 
 class HomeController extends Controller
 {
@@ -273,12 +277,48 @@ class HomeController extends Controller
             'max_speed'   => 0],
       ]];
 
-      return view('services.systems', compact('components'));
+      $component_categories = ComponentCategory::all();
+      return view('services.systems', compact('component_categories'));
+    }
+
+    public function system_order_send(Request $request)
+    {
+      $system = System::find($request->id);
+
+    //   $this->validate($request, [
+    //           'name' => 'required',
+    //           'email' => 'email|required_without:phone',
+    //           'phone' => 'required_without:email|regex:/^\\(?[01][23478]\\)? ?[0-9\\s]{4,10}$/',
+    //       ]);
+
+      $message = trans('content.system_order_success', ['name' => $request->name]);
+      try {
+        Mail::send('emails.system_order', ['system' => $system], function ($m) use ($system) {
+            $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
+            $m->to('derek@computerwhiz.com.au', 'Derek Gillett')
+              ->subject(trans('system-order-subject', ['name' => $request->name]));
+        });
+      }
+      catch (\Exception $e) {
+        return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
+      }
+      return redirect('/contact')->with('message_success', $message);
     }
 
     public function system_order(Request $request)
     {
-      dd($request);
+        $system = new System;
+        $system->save();
+        foreach($request->all() as $key=>$value) {
+            if (substr($key,0,3) == 'opt') {
+                $component = Component::find($value);
+                $system_component = new SystemComponent;
+                $system_component->system()->associate($system);
+                $system_component->component()->associate($component);
+                $system_component->save();
+            }
+        }
+        return view('services.system_view', compact('system'));
     }
 
     public function solutions()
@@ -303,7 +343,7 @@ class HomeController extends Controller
       try {
         Mail::send('emails.contact', ['request' => $request], function ($m) use ($request) {
             $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
-            $m->to('derek@computerwhiz.com.au', 'Derek Gillett')
+            $m->to(['1min-sms@fut.io'], 'Derek Gillett')
               ->subject(trans('content.email-subject', ['name' => $request->name]));
         });
       }
@@ -312,5 +352,4 @@ class HomeController extends Controller
       }
       return redirect('/contact')->with('message_success', $message);
     }
-
 }

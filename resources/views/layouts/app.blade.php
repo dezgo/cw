@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,14 +7,8 @@
 
     <title>Computer Whiz - Canberra</title>
 
-    <!-- Fonts -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
-
-<!-- Styles -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"> {{--
-<link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
-<link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link href="/css/all.css" rel="stylesheet">
+    <script language="javascript" src="/js/all.js"></script>
 
 <style>
   body {
@@ -32,8 +26,12 @@
     background-color: #A5061C;
   }
 
-  a {
+  a:link.menulink, a:visited.menulink {
     color: white;
+  }
+
+  a:hover.menulink {
+    color: black;
   }
 
   .boxed-row {
@@ -51,47 +49,43 @@
     color: #B21F24;
   }
 </style>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+@yield('head')
 </head>
 
 <body id="app-layout">
+    <nav class="navbar">
   @if (Auth::check())
-  <nav class="navbar">
-    <div class="container">
       <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+            <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
             <ul class="dropdown-menu" role="menu">
-              <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+              <li><a class="menulink" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
             </ul>
           </li>
         </ul>
       </div>
-    </div>
-  </nav>
   @endif
-  <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <img src='/images/logo.png'>
+        <img alt="Logo" src='/images/logo.png'>
       </div>
       <div class="col-md-6 text-right">
-        <img src='/images/numeros.png'>
+        <img alt="Need IT support? CALL NOW! 02 6112 8025 7 days a week" src='/images/numeros.png'>
       </div>
     </div>
 
     <div class="row">
       <div class="col-md-12 menubar">
         <ul class="nav nav-tabs">
-          <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a href="/home">Home</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a href="/about">About</a></li>
+          <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a class="menulink" href="/home">Home</a></li>
+          <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a class="menulink" href="/about">About</a></li>
 
           <li role="presentation" class="dropdown{!! Request::segment(1) == 'services' ? ' active' : '' !!}">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="dropdown-toggle menulink" data-toggle="dropdown" href="/services" role="button" aria-haspopup="true" aria-expanded="false">
                 Home Services <span class="caret"></span>
               </a>
               <ul class="dropdown-menu">
@@ -101,50 +95,45 @@
               </ul>
           </li>
 
-          <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a href="/solutions">Business Solutions</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a href="/contact">Contact</a></li>
+          <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a class="menulink" href="/solutions">Business Solutions</a></li>
+          <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a class="menulink" href="/contact">Contact</a></li>
         </ul>
       </div>
     </div>
+</nav>
+    <div class="container">
+        @yield('content')
 
-    @yield('content')
+        <img alt="spacer" src="/images/spacer.gif" height="100">
+        <div class="boxed-row">
+          For more information or to request an appointment please call 02 6112 8025
+          or complete the form on the Contact page.
+        </div>
 
-    <img src="/images/spacer.gif" height="100px">
-    <div class="boxed-row">
-      For more information or to request an appointment please call 02 6112 8025
-      or complete the form on the Contact page.
+        <div class="row">
+          <div class="col-md-1">
+            <img alt="HP Logo" src="/images/logo_hp.png">
+          </div>
+          <div class="col-md-2">
+            <img alt="Microsoft Logo" src="/images/logo_microsoft.png">
+          </div>
+          <div class="col-md-2">
+            <img alt="Kaspersky Logo" src="/images/logo_kaspersky.png">
+          </div>
+          <div class="col-md-2">
+            <img alt="Toshiba Logo" src="/images/logo_toshiba.png">
+          </div>
+          <div class="col-md-2">
+            <img alt="Dell Logo" src="/images/logo_dell.png">
+          </div>
+          <div class="col-md-2">
+            <img alt="ASUS Logo" src="/images/logo_asus.png">
+          </div>
+          <div class="col-md-1">
+            <img alt="Acer Logo" src="/images/logo_acer.png">
+          </div>
+        </div>
     </div>
-
-    <div class="row">
-      <div class="col-md-1">
-        <img src="/images/logo_hp.png">
-      </div>
-      <div class="col-md-2">
-        <img src="/images/logo_microsoft.png">
-      </div>
-      <div class="col-md-2">
-        <img src="/images/logo_kaspersky.png">
-      </div>
-      <div class="col-md-2">
-        <img src="/images/logo_toshiba.png">
-      </div>
-      <div class="col-md-2">
-        <img src="/images/logo_dell.png">
-      </div>
-      <div class="col-md-2">
-        <img src="/images/logo_asus.png">
-      </div>
-      <div class="col-md-1">
-        <img src="/images/logo_acer.png">
-      </div>
-    </div>
-    </div>
-
-  <!-- JavaScripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
-  <script src="/js/bootstrap.min.js"></script>
-  {{--
-  <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 
 </html>
