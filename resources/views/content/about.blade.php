@@ -9,27 +9,23 @@
                 <img alt="Derek" src="/images/derek.png">
             </div>
             <div class="col-md-8">
-                <h4>Derek Gillett, founder and technician</h4>
+                <h4><b>Derek Gillett, founder and technician</b></h4>
                 My
                 goal is to provide an approachable, friendly, I.T. support service to home &amp;
                 business users in the local area.<br>
                 <br>
                 I also love to
-                teach people how to use computers, and technology generally. But there's
-                an art to conveying meaning in the technology field. There's so many
+                teach people how to use computers, and technology generally. There's
+                an art to conveying meaning in the technology field. There are so many
                 technical terms, like 'power-cycling' your modem, or the myriad of ways
-                to describe your connection to the internet - 3G, 4G, wifi, data, ADSL etc.
+                to describe your connection to the internet - 3G, 4G, wifi, data, ADSL.
                 The trick to teaching people technology is to gently introduce these terms
                 and describe what they mean ... then describe that again in a different way,
                 and repeat patiently until that ah-ha moment arrives.<br>
                 <br>
-                I run daily, so you'll often find me hitting the running track
-                around the base of the beautiful Red Hill close to our house, or accompanying
-                my daughters on their ride to school. I also love audio books and often
-                have one playing in the car or while running. I'm currently enjoying
-                Confessions of an Economic Hit Man by <a href="http://johnperkins.org/books"
-                target="_blank">John Perkins</a>, an intriguing read
-                which I highly recommend.
+                When I'm not in front of a computer, you'll often find me hitting the running tracks
+                near our home in Red Hill. I also love audio books and often
+                have one playing in the car or while running.
             </div>
         </div>
 
@@ -44,7 +40,7 @@
                 <img alt="Adriana" src="/images/adriana.png">
             </div>
             <div class="col-md-8">
-                <h4>Adriana Gillett, graphic/web designer</h4>
+                <h4><b>Adriana Gillett, graphic/web designer</b></h4>
                 I've always been very artistic. With a love of art in mind, I first studied
                 Fine Arts. I then went on to obtain a Bachelor's degree in Graphic Design.
                 Creating beautiful things has long been a passion of mine, whether it's

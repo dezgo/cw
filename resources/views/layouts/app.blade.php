@@ -83,18 +83,7 @@
         <ul class="nav nav-tabs">
           <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a class="menulink" href="/home">Home</a></li>
           <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a class="menulink" href="/about">About</a></li>
-
-          <li role="presentation" class="dropdown{!! Request::segment(1) == 'services' ? ' active' : '' !!}">
-              <a class="dropdown-toggle menulink" data-toggle="dropdown" href="/services" role="button" aria-haspopup="true" aria-expanded="false">
-                Home Services <span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li role="presentation"><a href="/services">What do we do?</a></li>
-                <li role="presentation"><a href="/services/email">Email Issues</a></li>
-                <li role="presentation"><a href="/services/systems">New Computer Sales &amp; Set Up</a></li>
-              </ul>
-          </li>
-
+          <li role="presentation"{!! Request::segment(1) == 'services' ? ' class="active"' : '' !!}><a class="menulink" href="/services">Home Services</a></li>
           <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a class="menulink" href="/solutions">Business Solutions</a></li>
           <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a class="menulink" href="/contact">Contact</a></li>
         </ul>
@@ -104,7 +93,7 @@
     <div class="container">
         @yield('content')
 
-        <img alt="spacer" src="/images/spacer.gif" height="100">
+        <img alt="spacer" src="/images/spacer.gif" height="50">
         <div class="boxed-row">
           For more information or to request an appointment please call 02 6112 8025
           or complete the form on the Contact page.

@@ -24,3 +24,4 @@ Route::post('/services/systems_send', 'HomeController@system_order_send');
 Route::get('/solutions', 'HomeController@solutions');
 Route::get('/contact', 'HomeController@contact');
 Route::post('/contact_send', 'HomeController@contact_send');
+Route::get('/reading_list', 'HomeController@reading_list');

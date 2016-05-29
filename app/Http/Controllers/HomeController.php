@@ -352,4 +352,9 @@ class HomeController extends Controller
       }
       return redirect('/contact')->with('message_success', $message);
     }
+
+    public function reading_list()
+    {
+        return view('content.reading_list');
+    }
 }

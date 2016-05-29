@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-5">
-        <img alt="Fast Reliable Friendly Onsite Support" src="/images/services.png">
+        <img alt="Fast Reliable Friendly Onsite Support" src="/images/business_solutions.png">
     </div>
     <div class="col-md-7">
         <h3>Business Solutions</h3>
