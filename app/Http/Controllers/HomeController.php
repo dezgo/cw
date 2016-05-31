@@ -357,4 +357,9 @@ class HomeController extends Controller
     {
         return view('content.reading_list');
     }
+
+    public function remote()
+    {
+        return view('content.remote');
+    }
 }

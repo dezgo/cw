@@ -83,6 +83,7 @@
         <ul class="nav nav-tabs">
           <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a class="menulink" href="/home">Home</a></li>
           <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a class="menulink" href="/about">About</a></li>
+          <li role="presentation"{!! Request::segment(1) == 'remote' ? ' class="active"' : '' !!}><a class="menulink" href="/remote">Remote Support</a></li>
           <li role="presentation"{!! Request::segment(1) == 'services' ? ' class="active"' : '' !!}><a class="menulink" href="/services">Home Services</a></li>
           <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a class="menulink" href="/solutions">Business Solutions</a></li>
           <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a class="menulink" href="/contact">Contact</a></li>
