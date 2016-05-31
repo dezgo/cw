@@ -43,7 +43,7 @@
           <div class="col-md-6">
             <img alt="Virus Removal and Protection" src="/images/svh_virus.png"><br>
             <br>
-            <img alt="Email Issues" src="/images/svh_email.png"><Br>
+            <a href="/services/email"><img alt="Email Issues" src="/images/svh_email.png"></a><Br>
             <br>
             <img alt="Troubleshooting" src="/images/svh_troubl.png"><br>
             <br>

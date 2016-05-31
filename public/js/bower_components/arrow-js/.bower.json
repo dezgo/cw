@@ -1,0 +1,33 @@
+{
+  "name": "arrow-js",
+  "version": "0.1.7",
+  "description": "Display an arrow pointing to the browser download location",
+  "main": [
+    "src/js/arrow.js"
+  ],
+  "ignore": [
+    "lib",
+    "test",
+    "spec",
+    "node_modules",
+    "Gruntfile.js",
+    "SpecRunner.html",
+    "package.json",
+    "bower.json",
+    ".travis.yml",
+    ".gitignore"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/pbojinov/arrow-js",
+  "_release": "0.1.7",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.7",
+    "commit": "65ff5ebe7ad91d8b5473087b9f59bd0d5e3e9e13"
+  },
+  "_source": "https://github.com/pbojinov/arrow-js.git",
+  "_target": "^0.1.7",
+  "_originalSource": "arrow-js",
+  "_direct": true
+}

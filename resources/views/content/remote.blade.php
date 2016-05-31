@@ -19,9 +19,15 @@
         and relax while we get to work resolving your issue right before your
         eyes!<br>
         <br>
-        <a target="qs" href='http://get.teamviewer.com/computerwhiz_qs'><img src="/images/remote_btn.png"></a>
+        <a class="remote_support" target="qs" href='http://get.teamviewer.com/computerwhiz_qs'><img src="/images/btn_getstarted.png"></a>
         <iframe style="visibility:hidden;display:none" name="qs"></iframe>
     </div>
 </div>
 
+<script type="text/javascript" src="/js/bower_components/arrow-js/src/js/arrow.js"></script>
+<script language="javascript">
+$('.remote_support').click(function(){
+    Arrow.show(10000);
+});
+</script>
 @stop

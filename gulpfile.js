@@ -18,7 +18,7 @@ elixir(function(mix) {
         'bootstrap.css',
         'font-awesome.css',
         'jquery-ui.css',
-        'lato-font.css'
+        'lato-font.css',
     ]);
 
     mix.scripts([
