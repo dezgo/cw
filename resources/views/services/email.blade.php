@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
+<style scoped>
 .top {
   vertical-align: middle;
   display: inline-block;
@@ -46,7 +46,7 @@ to joe@isp.com will automatically be collected and appear in your webmail accoun
 Here's a video I put together some years ago now which explains how to do that.
 <div class="media">
         <div class="media-body">
-<iframe width="420" height="315" src="//www.youtube.com/embed/Jrf1RC-F8MM?autoplay=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="420" height="315" src="//www.youtube.com/embed/Jrf1RC-F8MM?autoplay=0" allowfullscreen></iframe>
 </div>
 </div>
 <br>
@@ -60,7 +60,7 @@ worlds! Just remember when adding your webmail account - use IMAP, not POP.<br>
 Of course if all this sounds great, but you wouldn't know where to start setting
 it up, call me - I'd be happy to help :)<br>
 <Br>
-<img src="/images/sig-sm.png"><br>
+<img alt="Derek Signature" src="/images/sig-sm.png"><br>
 Derek Gillett<br>
 22 May 2016
 </div>

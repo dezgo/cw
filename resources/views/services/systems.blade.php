@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style>
+<style scoped>
 h2 {
   font-variant: small-caps;
 }
@@ -27,11 +27,10 @@ transfer your old data across to it, and come to you to set it up.<br>
 <div class="row">
   <div class="col-md-9">
 @foreach ($component_categories as $component_category)
-<a name="{{ $component_category->name }}"></a>
-<h2>{{ $component_category->description }}</h2>
+<h2 id="{{ $component_category->name }}">{{ $component_category->description }}</h2>
 <div class="row">
   <div class="col-md-3">
-    <img src="/images/{{ $component_category->image_path }}">
+    <img alt="{{ $component_category->name }}" src="/images/{{ $component_category->image_path }}">
     @if ($component_category->max_speed() > 0)
     <br>
     Speed:&nbsp;<span id="{{ $component_category->name }}SpeedValue"></span><div class="progress">
@@ -47,7 +46,7 @@ transfer your old data across to it, and come to you to set it up.<br>
       @foreach($component_category->components as $component)
       <div class="radio">
         <label>
-          <input type="radio" name="opt{{ $component_category->name }}" value="{{ $component->id }}" price="{{ $component->price }}"
+          <input type="radio" name="opt{{ $component_category->name }}" value="{{ $component->id }}" data-price="{{ $component->price }}"
           {{ count($component_category->components) == 1 ? ' checked="checked"' : '' }}>
           {{ $component->description.' ('.money_format('%i', $component->price).')' }}
         </label>
@@ -76,7 +75,7 @@ transfer your old data across to it, and come to you to set it up.<br>
 
 </form>
 
-<script language="javascript">
+<script>
 $(document).ready(function() {
     @foreach ($component_categories as $component_category)
     $('input[type=radio][name=opt{{ $component_category->name }}]').change(function() {
@@ -103,7 +102,7 @@ $(document).ready(function() {
 calcTotal = function() {
   var total = 0;
   $(':radio:checked').each(function(){
-    total += parseFloat($(this).attr('price'));
+    total += parseFloat($(this).attr('data-price'));
   });
   $('#systemTotalPrice').html('').append(total.toFixed(2));
 };

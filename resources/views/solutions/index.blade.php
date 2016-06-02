@@ -11,26 +11,28 @@
         contracted day to day running running of your computer network. We can help
         with things like:<br>
         <br>
-        <ul>
             <div class="row">
                 <div class="col-md-6">
+                    <ul>
                         <li>Mac or PC</li>
                         <li>Business Email Setup</li>
                         <li>Troubleshooting</li>
                         <li>User support and training</li>
                         <li>Secure backup</li>
                         <li>Internet/Wifi</li>
+                    </ul>
                 </div>
                 <div class="col-md-6">
+                    <ul>
                         <li>Tablet and mobile setup</li>
                         <li>Virus removal &amp; protection</li>
                         <li>Network/local printer installation</li>
                         <li>New computer sales &amp; support</li>
                         <li>Networking</li>
                         <li>Wesite design and hosting</li>
+                    </ul>
                 </div>
             </div>
-        </ul>
         Your issue not covered? We can probably still help, so contact us now
         for a chat.
     </div>

@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<script language="javascript">
+<script>
 $('#frmContact').one('submit', function() {
     $(this).find('input[type="submit"]').attr('disabled','disabled');
 });

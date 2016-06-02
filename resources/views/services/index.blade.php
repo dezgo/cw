@@ -10,25 +10,27 @@
         We can help with everything from troubleshooting, diagnosing, building, servicing, maintaining
         and repairing any brand of desktops and laptops<br>
         <br>
-        <ul>
         <div class="row">
             <div class="col-md-6">
+                <ul>
                     <li>Mac or PC</li>
                     <li>Email Issues</li>
                     <li>Troubleshooting</li>
                     <li>User support and training</li>
                     <li>Secure backup</li>
                     <li>Internet/Wifi</li>
+                </ul>
             </div>
             <div class="col-md-6">
+                <ul>
                     <li>Tablet and mobile set up</li>
                     <li>Virus removal &amp; protection</li>
                     <li>Printer set up</li>
                     <li>New computer sales &amp; set up</li>
                     <li>Photos - sharing accesing &amp; storing them securely</li>
+                </ul>
             </div>
         </div>
-    </ul>
     </div>
 </div>
 <div class="row">
