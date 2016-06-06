@@ -1,5 +1,15 @@
 @extends('layouts.app')
 
+@section('head')
+<style>
+.clickable {
+    padding:1px;
+    border:1px solid #021a40;
+}
+</style>
+
+@stop
+
 @section('content')
 <div class="row">
     <div class="col-md-5">
@@ -45,7 +55,7 @@
           <div class="col-md-6">
             <img alt="Virus Removal and Protection" src="/images/svh_virus.png"><br>
             <br>
-            <a href="/services/email"><img alt="Email Issues" src="/images/svh_email.png"></a><Br>
+            <a href="/services/email"><img alt="Email Issues" src="/images/svh_email.png" class="clickable"></a><Br>
             <br>
             <img alt="Troubleshooting" src="/images/svh_troubl.png"><br>
             <br>
@@ -58,7 +68,7 @@
             <img alt="User Support and Training" src="/images/svh_user.png"><br>
             <Br>
             <a href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
-                <img alt="Secure Backup" src="/images/svh_secure.png"><Br>
+                <img alt="Secure Backup" src="/images/svh_secure.png" class="clickable"><Br>
             </a>
             <br>
             <img alt="Photos-Storing and Sharing" src="/images/svh_photos.png"><br>
