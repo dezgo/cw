@@ -60,7 +60,9 @@
           <div class="col-md-6">
             <img alt="User/Staff Support and Training" src="/images/svb_user.png"><br>
             <br>
-            <img alt="Secure Backup" src="/images/svb_secure.png"><br>
+            <a href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
+                <img alt="Secure Backup" src="/images/svb_secure.png"><br>
+            </a>
             <br>
             <img alt="Web Design and Web Hosting" src="/images/svb_web.png"><br>
             <br>

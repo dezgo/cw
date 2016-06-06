@@ -8,6 +8,9 @@ h2 {
 a.component {
   color: black;
 }
+.affix {
+  top: 0;
+}
 </style>
 
 <h1>New Computer Sales &amp; Set Up</h1>
@@ -59,7 +62,7 @@ transfer your old data across to it, and come to you to set it up.<br>
 @endforeach
 </div>
   <div class="col-md-3">
-    <div class="panel panel-default" data-spy="affix">
+    <div class="panel panel-default" data-spy="affix" data-offset-top="200">
       <div class="panel-body">
         <h2>PC Builder</h2>
         @foreach ($component_categories as $component_category)

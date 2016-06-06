@@ -75,46 +75,56 @@
 </head>
 
 <body id="app-layout">
-    <nav class="navbar">
-  @if (Auth::check())
-      <div class="collapse navbar-collapse" id="app-navbar-collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-            <ul class="dropdown-menu" role="menu">
-              <li><a class="menulink" href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-  @endif
-    <div class="row">
-      <div class="col-md-6">
-        <img alt="Logo" src='/images/logo.png'>
-      </div>
-      <div class="col-md-6 text-right">
-        <img alt="Need IT support? CALL NOW! 02 6112 8025 7 days a week" src='/images/numeros.png'>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="col-md-12 menubar">
-        <ul class="nav nav-tabs">
-          <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a class="menulink" href="/home">Home</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a class="menulink" href="/about">About</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'remote' ? ' class="active"' : '' !!}><a class="menulink" href="/remote">Remote Support</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'services' ? ' class="active"' : '' !!}><a class="menulink" href="/services">Home Services</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a class="menulink" href="/solutions">Business Solutions</a></li>
-          <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a class="menulink" href="/contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-</nav>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
+      @if (Auth::check())
+      <nav class="navbar navbar-default">
+          <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
+
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </nav>
+      @endif
+        <div class="row">
+          <div class="col-md-6">
+            <img alt="Logo" src='/images/logo.png'>
+          </div>
+          <div class="col-md-6 text-right">
+            <img alt="Need IT support? CALL NOW! 02 6112 8025 7 days a week" src='/images/numeros.png'>
+          </div>
+        </div>
+        <img alt="spacer" src="/images/spacer.gif" height="10">
+        <div class="row">
+          <div class="col-md-12 menubar">
+            <ul class="nav nav-tabs">
+              <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}><a class="menulink" href="/home">Home</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}><a class="menulink" href="/about">About</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'remote' ? ' class="active"' : '' !!}><a class="menulink" href="/remote">Remote Support</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'services' ? ' class="active"' : '' !!}><a class="menulink" href="/services">Home Services</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}><a class="menulink" href="/solutions">Business Solutions</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}><a class="menulink" href="/contact">Contact</a></li>
+            </ul>
+          </div>
+        </div>
         @yield('content')
+
+        <div class="fb-like" data-href="https://www.facebook.com/computerwhizcanberra/" data-layout="standard" data-action="like" data-show-faces="false" data-share="true"></div>
 
         <img alt="spacer" src="/images/spacer.gif" height="50">
         <div class="boxed-row">

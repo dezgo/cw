@@ -76,7 +76,9 @@
   </div>
   <div class="col-md-2 services">
     <div class="services-box">
-      <img alt="Secure Backup Service" width="147" height="86" src="/images/sv_secure_backup.png">
+        <a href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
+            <img alt="Secure Backup Service" width="147" height="86" src="/images/sv_secure_backup.png">
+        </a>
     </div>
   </div>
   <div class="col-md-3 services">
