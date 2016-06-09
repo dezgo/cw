@@ -19,6 +19,7 @@ Route::get('/about', 'HomeController@about');
 Route::get('/services', 'HomeController@services');
 Route::get('/services/email', 'HomeController@services_email');
 Route::get('/services/systems', 'HomeController@services_systems');
+Route::get('/services/systems/{system}/edit', 'HomeController@edit_system');
 Route::post('/services/systems', 'HomeController@system_order');
 Route::post('/services/systems_send', 'HomeController@system_order_send');
 Route::get('/solutions', 'HomeController@solutions');

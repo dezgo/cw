@@ -9,6 +9,8 @@ use App\ComponentCategory;
 use App\SystemComponent;
 use App\System;
 use App\Component;
+use Validator;
+use Session;
 
 class HomeController extends Controller
 {
@@ -42,37 +44,71 @@ class HomeController extends Controller
       return view('services.email');
     }
 
+    public function edit_system(System $system)
+    {
+        Session::forget('system_id');
+        $component_categories = ComponentCategory::all();
+        return view('services.systems', compact('component_categories','system'));
+    }
+
     public function services_systems()
     {
-      $component_categories = ComponentCategory::all();
-      return view('services.systems', compact('component_categories'));
+        if (Session::has('system_id')) {
+            $system_id = Session::get('system_id');
+            $system = System::findOrFail($system_id);
+            return view('services.system_view', compact('system'));
+        }
+        else {
+            $component_categories = ComponentCategory::all();
+            return view('services.systems', compact('component_categories'));
+        }
     }
 
     public function system_order_send(Request $request)
     {
-      $system = System::find($request->id);
+        $validator = Validator::make($request->all(), [
+                'name' => 'required',
+                'email' => 'email|required_without:phone',
+                'phone' => 'required_without:email|regex:/^\\(?[01][23478]\\)? ?[0-9\\s]{4,10}$/',
+            ]);
 
-      $message = trans('content.system_order_success', ['name' => $request->name]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)
+                        ->withInput();
+        }
+
+        $system = System::find($request->id);
+        $system->name = $request->name;
+        $system->phone = $request->phone;
+        $system->email = $request->email;
+        $system->save();
+
+      $message = trans('content.system_order_success', ['name' => $system->name]);
       try {
         Mail::send('emails.system_order', ['system' => $system], function ($m) use ($system) {
             $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
             $m->to('derek@computerwhiz.com.au', 'Derek Gillett')
-              ->subject(trans('system-order-subject', ['name' => $request->name]));
+              ->subject(trans('content.system_order_subject', ['name' => $system->name]));
         });
       }
       catch (\Exception $e) {
         return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
       }
+      $request->session()->forget('system_id');
       return redirect('/contact')->with('message_success', $message);
     }
 
     public function system_order(Request $request)
     {
+        if ($request->system_id <> '') {
+            System::findOrFail($request->system_id)->delete();
+        }
         $system = new System;
         $system->save();
+        $request->session()->put('system_id', $system->id);
         foreach($request->all() as $key=>$value) {
-            if (substr($key,0,3) == 'opt') {
-                $component = Component::find($value);
+            if (substr($key,0,3) == 'opt' && $value != 'skip') {
+                $component = Component::findOrFail($value);
                 $system_component = new SystemComponent;
                 $system_component->system()->associate($system);
                 $system_component->component()->associate($component);

@@ -15,8 +15,10 @@ class CreateComponentCategoriesTable extends Migration
       Schema::create('component_categories', function (Blueprint $table) {
           $table->increments('id');
           $table->string('name');
-          $table->string('description');
+          $table->string('long_name');
           $table->string('image_path');
+          $table->boolean('required');
+          $table->text('description');
           $table->timestamps();
       });
     }

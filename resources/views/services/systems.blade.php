@@ -27,10 +27,13 @@ transfer your old data across to it, and come to you to set it up.<br>
 <form method="POST" action="/services/systems">
   {{ csrf_field() }}
 
+@if (!empty($system))
+    <input type="hidden" name="system_id" value="{{ $system->id }}">
+@endif
 <div class="row">
   <div class="col-md-9">
 @foreach ($component_categories as $component_category)
-<h2 id="{{ $component_category->name }}">{{ $component_category->description }}</h2>
+<h2 id="{{ $component_category->name }}">{{ $component_category->long_name }}</h2>
 <div class="row">
   <div class="col-md-3">
     <img alt="{{ $component_category->name }}" src="/images/{{ $component_category->image_path }}">
@@ -45,12 +48,27 @@ transfer your old data across to it, and come to you to set it up.<br>
   </div>
 
   <div class="col-md-9">
+      {{ $component_category->description }}<br>
     <div class="list-group">
+        @if (!$component_category->required)
+        <div class="radio">
+          <label>
+            <input type="radio" name="opt{{ $component_category->name }}" value="skip" data-price="0">
+            Skip
+          </label>
+        </div>
+        @endif
       @foreach($component_category->components as $component)
       <div class="radio">
         <label>
+          <?php
+          $checked = (count($component_category->components) == 1 and $component_category->required);
+          if (!empty($system) and !$checked ) {
+            $checked = array_search($component->id, $system->component_ids());
+          }
+          ?>
           <input type="radio" name="opt{{ $component_category->name }}" value="{{ $component->id }}" data-price="{{ $component->price }}"
-          {{ count($component_category->components) == 1 ? ' checked="checked"' : '' }}>
+          {{ $checked ? ' checked="checked"' : '' }}>
           {{ $component->description.' ('.money_format('%i', $component->price).')' }}
         </label>
       </div>
@@ -59,6 +77,7 @@ transfer your old data across to it, and come to you to set it up.<br>
 
   </div>
 </div>
+<hr>
 @endforeach
 </div>
   <div class="col-md-3">

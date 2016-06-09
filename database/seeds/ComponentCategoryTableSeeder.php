@@ -11,299 +11,163 @@ class ComponentCategoryTableSeeder extends Seeder
      */
     public function run()
     {
-        $names = [
-            'antivirus',
-            'build',
-            'cpu',
-            'storage',
-            'input',
-            'install',
-            'motherboard',
-            'monitor',
-            'onsite',
-            'optical',
-            'ram',
-            'tower',
-            'wireless',
-            'operating_system',
-            'office',
-        ];
-
-        $descriptions = [
+        $categories = [
+            ['antivirus',
             'Antivirus',
-            'Build',
-            'CPU',
-            'Storage',
-            'Input',
-            'Install',
-            'Motherboard',
-            'Monitor',
-            'Onsite Setup',
-            'Optical Drive',
-            'RAM',
-            'Tower',
-            'Wireless card',
-            'Operating System (O/S)',
-            'Office Suite',
-        ];
-
-        $image_paths = [
             'cs_antivirus_sm.png',
+            false,
+            'Antivirus software is subscription-based software that is installed on your
+            PC to help protect it from malware and other nasties. Although Microsoft Windows 10
+            does come with built-in protection with Windows Defender, it\'s a good idea
+            to pay the extra for a high-quality commercial antivirus like Kaspersky.',
+            ],
+
+            ['build',
+            'Build',
             'cs_build_sm.png',
-            'cs_cpu_sm.png',
-            'cs_hard_drive_sm.png',
-            'cs_input_sm.png',
-            'cs_install_sm.png',
-            'cs_mobo_sm.png',
-            'cs_monitor.png',
-            'cs_onsite_sm.png',
-            'cs_optical_sm.png',
-            'cs_ram_sm.png',
+            true,
+            'You want your computer to come in one piece right?',
+            ],
+
+            ['case',
+            'Case',
             'cs_tower_sm.png',
+            true,
+            'All your computer parts are stored safely inside this shiny black box.',
+            ],
+
+            ['cpu',
+            'CPU',
+            'cs_cpu_sm.png',
+            true,
+            'The brains of the operation, the CPU (Central Processing Unit) does all
+            the actual \'computing\' work. It plays a
+            big part in determining how fast your computer will run. Choose carefully,
+            as once you\'ve picked a CPU, it won\'t be feasible to change it again until
+            you get a new computer.',
+            ],
+
+            ['storage',
+            'Storage',
+            'cs_hard_drive_sm.png',
+            true,
+            'This is where all your data will be stored. You\'ll notice something odd
+            in this category, you pay more for a smaller one! The reason for the extra
+            cost is the speed. The smaller one is called a \'Solid State Drive\' (SSD).
+            Solid State Drives work much like a USB stick. They have no moving parts
+            and thus run a lot faster, generally about four times faster than an old style
+            hard drive which has multiple spinning platters and an arm much like a record
+            player which moves across the platter to retrieve the information. Those
+            platters spin at 7,200 revolutions per minute, so they\'re still quick, but
+            I digress.',
+            ],
+
+            ['input',
+            'Input',
+            'cs_input_sm.png',
+            false,
+            'Keyboard and mouse, essential gear for controlling your computer. Remember,
+            newer computers often don\'t have a \'PS2\' port (or if they do, they only
+            have one), which might be how your old keyboard and/or mouse connected to
+            your old computer. If so,
+            then you better get a new keyboard and mouse here because that old one may
+            not work. If in doubt, call us and we can work it out together.'
+            ],
+
+            ['install',
+            'Install',
+            'cs_install_sm.png',
+            false,
+            'Want us to transfer your data or install anything special? Pick this and we\'ll
+            get that done.',
+            ],
+
+            ['motherboard',
+            'Motherboard',
+            'cs_mobo_sm.png',
+            true,
+            'The motherboard is what everything plugs into inside that black box (the case).
+            including the CPU, RAM, and drives. It\'s a must for your new computer,
+            so we\'ll just pop one of those in for you OK?',
+            ],
+
+            ['monitor',
+            'Monitor',
+            'cs_monitor.png',
+            false,
+            'When choosing a monitor, things to lookout for are whether or not they have built-in
+            speakers, how big the screen is, and a tricky one - the response time. Basically, the
+            lower the response time, the better. It\'s how long each dot on the screen
+            (a pixel) takes to respond when told to change, so the quicker the better.',
+            ],
+
+            ['onsite',
+            'Onsite Setup',
+            'cs_onsite_sm.png',
+            false,
+            'Need help getting your new computer setup at your place? Add this in
+            and we\'ll sort that out for you.',
+            ],
+
+            ['optical',
+            'Optical Drive',
+            'cs_optical_sm.png',
+            false,
+            'By optical drive, we just mean a DVD, or Blu-Ray. In the old days, there
+            were also plain old CD Players, but they\'re long gone now. Note, a DVD can
+            read a CD, and a Blu-Ray can read both CD\'s and DVD\'s. Note this is an
+            optional component as nowadays you hardly even need an optical drive as
+            all software can be downloaded. Up to you.',
+            ],
+
+            ['ram',
+            'RAM',
+            'cs_ram_sm.png',
+            true,
+            'RAM stands for Random Access Memory. When your computer is running, it
+            can only execute programs when they are in RAM, so it\'s constantly shifting
+            data in and out of RAM to run it. Generally 8GB is a good amount of RAM
+            to get. Windows will work OK with 4GB, but might need to work a bit harder
+            doing all that swapping if you open lots of programs at once.',
+            ],
+
+            ['wireless',
+            'Wireless card',
             'cs_wireless_card_sm.png',
+            false,
+            'If you won\'t have your modem next to your computer, you might need
+            a wireless card to connect to the internet. If that\'s the case, be
+            sure to throw this in.',
+            ],
+
+            ['operating_system',
+            'Operating System (O/S)',
             'cs_software_sm.png',
+            true,
+            'The operating system is what runs when you first turn your computer on
+            (well, after the BIOS, but that\'s another story).
+            Here at Computer Whiz HQ we\'re selling Windows computers, so you\'ll need
+            a copy of Windows.',
+            ],
+
+            ['office',
+            'Office Suite',
             'cs_office_sm.png',
+            false,
+            'Do you use Word or Excel? Or do you like to access your email through
+            Outlook? If you answered yes to any of the above questions, then you\'ll
+            need a copy of Microsoft Office on your new computer.',
+            ],
         ];
 
-        for ($i = 0; $i < count($image_paths); $i++) {
+        foreach ($categories as $category) {
             $component_category = new App\ComponentCategory;
-            $component_category->name = $names[$i];
-            $component_category->description = $descriptions[$i];
-            $component_category->image_path = $image_paths[$i];
+            $component_category->name = $category[0];
+            $component_category->long_name = $category[1];
+            $component_category->image_path = $category[2];
+            $component_category->required = $category[3];
+            $component_category->description = $category[4];
             $component_category->save();
         }
-
-        $components['storage'] = ['image_path' => 'cs_hard_drive_sm.png',
-                                  'parts' => [
-                        ['id'          => 1,
-                        'description' => '500 GB Hard Drive',
-                        'price'       => 63*1.2,
-                        'speed'       => 190,
-                        'max_speed'   => 450],
-                        ['id'          => 2,
-                        'description' => '1TB Hard Drive',
-                        'price'       => 68*1.2,
-                        'speed'       => 190,
-                        'max_speed'   => 450],
-                        ['id'          => 3,
-                        'description' => '240GB Solid State Drive',
-                        'price'       => 97*1.2,
-                        'speed'       => 450,
-                        'max_speed'   => 450],
-        ]];
-        $components['cpu'] = ['image_path' => 'cs_cpu_sm.png',
-                                  'parts' => [
-                        ['id'          => 1,
-                         'description' => 'Intel Core i3-6100 @ 3.7GHz',
-                         'price'       => 159*1.2,
-                         'speed'       => 5510,
-                         'max_speed'   => 9971],
-                         ['id'          => 2,
-                          'description' => 'Intel Core i5-6500 @ 3.2GHz',
-                          'price'       => 274*1.2,
-                          'speed'       => 7040,
-                          'max_speed'   => 9971],
-                          ['id'          => 3,
-                           'description' => 'Intel Core i7-6700 @ 3.4GHz',
-                           'price'       => 434*1.2,
-                           'speed'       => 9971,
-                           'max_speed'   => 9971],
-        ]];
-        $components['monitor'] = ['image_path' => 'cs_monitor.png',
-                                  'parts' => [
-           ['id'          => 0,
-            'description' => 'Skip',
-            'price'       => 0,
-            'speed'       => 0,
-            'max_speed'   => 0],
-           ['id'          => 2,
-            'description' => 'Philips 21.5" 226V4LAB 5ms 1920x1080 Speaker',
-            'price'       => 145*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-           ['id'          => 3,
-            'description' => 'Philips 24" 246V5LHAB 5ms 1920x1080 Speaker',
-            'price'       => 189*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-           ['id'          => 4,
-            'description' => 'Philips 27" 273V5QHAB 1ms 1920x1080 Speaker',
-            'price'       => 259*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-        ]];
-
-        $components['case'] = ['image_path' => 'cs_tower_sm.png',
-                                  'parts' => [
-           ['id'          => 1,
-            'description' => 'Coolermaster RC-344-SKN2 Elite RC-344 USB3.0 Case with 420W PSU',
-            'price'       => 75*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-        ]];
-
-        $components['ram'] = ['image_path' => 'cs_ram_sm.png',
-                                  'parts' => [
-           ['id'          => 1,
-            'description' => '4GB',
-            'price'       => 22*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-           ['id'          => 2,
-            'description' => '8GB',
-            'price'       => 44*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-           ['id'          => 3,
-            'description' => '16GB',
-            'price'       => 88*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-        ]];
-
-        $components['motherboard'] = ['image_path' => 'cs_mobo_sm.png',
-                                  'parts' => [
-           ['id'          => 1,
-            'description' => 'Gigabyte H110M-H DDR4 Intel Micro ATX Motherboard',
-            'price'       => 85*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-        ]];
-
-        $components['wireless'] = ['image_path' => 'cs_wireless_card_sm.png',
-                                  'parts' => [
-            ['id'          => 0,
-             'description' => 'Skip',
-             'price'       => 0,
-             'speed'       => 0,
-             'max_speed'   => 0],
-           ['id'          => 2,
-            'description' => 'TP-LINK Archer T2U AC600 Wireless Dual Band USB Adapter',
-            'price'       => 35*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-        ]];
-
-        $components['optical'] = ['image_path' => 'cs_optical_sm.png',
-                                  'parts' => [
-            ['id'          => 0,
-             'description' => 'Skip',
-             'price'       => 0,
-             'speed'       => 0,
-             'max_speed'   => 0],
-           ['id'          => 2,
-            'description' => 'DVD Read/Write',
-            'price'       => 18*1.2,
-            'speed'       => 0,
-            'max_speed'   => 0],
-            ['id'          => 3,
-             'description' => 'Blu-Ray Read/Write',
-             'price'       => 83*1.2,
-             'speed'       => 0,
-             'max_speed'   => 0],
-        ]];
-
-        $components['operating_system'] = ['image_path' => 'cs_software_sm.png',
-                                  'parts' => [
-            ['id'          => 1,
-             'description' => 'Microsoft Windows 10 OEM',
-             'price'       => 134*1.2,
-             'speed'       => 0,
-             'max_speed'   => 0],
-        ]];
-
-        $components['office'] = ['image_path' => 'cs_office_sm.png',
-                                  'parts' => [
-            ['id'          => 0,
-             'description' => 'Skip',
-             'price'       => 0,
-             'speed'       => 0,
-             'max_speed'   => 0],
-             ['id'          => 2,
-              'description' => 'Microsoft Office 365 2013 - 5 PCs, 1 Year',
-              'price'       => 88*1.2,
-              'speed'       => 0,
-              'max_speed'   => 0],
-            ['id'          => 3,
-             'description' => 'Microsoft Office 2013 Home & Student',
-             'price'       => 115*1.2,
-             'speed'       => 0,
-             'max_speed'   => 0],
-             ['id'          => 4,
-              'description' => 'Microsoft Office 2016 Home & Student',
-              'price'       => 129*1.2,
-              'speed'       => 0,
-              'max_speed'   => 0],
-              ['id'          => 5,
-               'description' => 'Microsoft Office 2016 Home & Business (includes Outlook)',
-               'price'       => 228*1.2,
-               'speed'       => 0,
-               'max_speed'   => 0],
-        ]];
-
-        $components['antivirus'] = ['image_path' => 'cs_antivirus_sm.png',
-                                  'parts' => [
-              ['id'          => 0,
-               'description' => 'Skip',
-               'price'       => 0,
-               'speed'       => 0,
-               'max_speed'   => 0],
-            ['id'          => 2,
-             'description' => 'Kasperksy Total Security 1 PC, 1 Year',
-             'price'       => 40,
-             'speed'       => 0,
-             'max_speed'   => 0],
-        ]];
-
-        $components['input'] = ['image_path' => 'cs_input_sm.png',
-            'parts' => [
-              ['id'          => 0,
-               'description' => 'Skip',
-               'price'       => 0,
-               'speed'       => 0,
-               'max_speed'   => 0],
-               ['id'          => 2,
-                'description' => 'Logitech MK345 Wireless Keyboard / Mouse',
-                'price'       => 46*1.2,
-                'speed'       => 0,
-                'max_speed'   => 0],
-        ]];
-
-        $components['build'] = ['image_path' => 'cs_build_sm.png',
-                                  'parts' => [
-             ['id'          => 1,
-              'description' => 'Build PC, install operating system / drivers / updates',
-              'price'       => 140,
-              'speed'       => 0,
-              'max_speed'   => 0],
-        ]];
-
-        $components['install'] = ['image_path' => 'cs_install_sm.png',
-                                  'parts' => [
-            ['id'          => 0,
-             'description' => 'Skip',
-             'price'       => 0,
-             'speed'       => 0,
-             'max_speed'   => 0],
-             ['id'          => 2,
-              'description' => 'Transfer data, install custom software',
-              'price'       => 140,
-              'speed'       => 0,
-              'max_speed'   => 0],
-        ]];
-
-        $components['onsite'] = ['image_path' => 'cs_onsite_sm.png',
-                                  'parts' => [
-              ['id'          => 0,
-               'description' => 'Skip',
-               'price'       => 0,
-               'speed'       => 0,
-               'max_speed'   => 0],
-             ['id'          => 2,
-              'description' => '1 hour onsite to help setup',
-              'price'       => 140,
-              'speed'       => 0,
-              'max_speed'   => 0],
-        ]];
     }
 }

@@ -70,6 +70,11 @@
   h1, h2, h3 {
     color: #B21F24;
   }
+
+  .clickable {
+      padding:1px;
+      border:1px solid #021a40;
+  }
 </style>
 @yield('head')
 </head>

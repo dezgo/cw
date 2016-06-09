@@ -1,15 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<h1>View System Built</h1>
+<h1>Check your PC</h1>
 
 <form method="POST" action="/services/systems_send" id="frmOrderSystem">
   {{ csrf_field() }}
 
-  <div class="form-group">
-    <label for="name" class="control-label">ID</label><br>
-    <input type="text" name="id" class="form-control" value="{{ $system->id }}" readonly>
-  </div>
+    <input type="hidden" name="id" value="{{ $system->id }}">
 
   <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
     <label for="name" class="control-label">Name*</label><br>
@@ -43,13 +40,37 @@
 
   <div class="form-group">
     <label for="components" class="control-label">Components</label><br>
-  @foreach ($system->components as $system_component)
-    {{ $system_component->component->description }}<br>
-  @endforeach
+
+    <table class="table">
+        <thead>
+            <th align="left">Category</th>
+            <th align="left">Component</th>
+            <th align="left">Price</th>
+        </thead>
+    @foreach ($system->system_components as $system_component)
+        <tr>
+            <td valign="top">
+                {{ $system_component->component->component_category->long_name }}
+            </td>
+            <td valign="top">
+                {{ $system_component->component->description }}
+            </td>
+            <td valign="top" align="right">
+                {{ money_format('%i',$system_component->component->price) }}
+            </td>
+        </tr>
+    @endforeach
+        <tr>
+            <td align="right" colspan="3">
+                {{ money_format('%i', $system->total) }}
+            </td>
+        </tr>
+    </table>
 <Br>
       <input type='submit' value='Send' class='btn btn-primary'>
       <br><br>
-      Or if you want to update something first, click Edit to go back<br>
-      <a href='javascript:history.back()' class='btn btn-default'>Edit</a>
+      Or if you want to update something first, go
+      <a href='/services/systems/{{ $system->id }}/edit' class='btn btn-default'>Back</a>
   </form>
+  <br>
 @stop
