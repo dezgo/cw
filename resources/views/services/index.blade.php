@@ -45,7 +45,7 @@
           <div class="col-md-6">
             <img alt="Virus Removal and Protection" src="/images/svh_virus.png"><br>
             <br>
-            <a href="/services/email">
+            <a id="emailserviceslink" href="/services/email">
                 <img alt="Email Issues" src="/images/svh_email.png" class="clickable"><Br>
             </a>
             <br>
@@ -53,7 +53,7 @@
             <br>
             <img alt="Tablet and Mobile Setup and Training" src="/images/svh_tablet.png"><br>
             <br>
-            <a href="/services/systems">
+            <a id="systemslink" href="/services/systems">
                 <img alt="New Computer Sales and Setup" src="/images/svh_new_comp.png" class="clickable"><br>
             </a>
             <br>
@@ -61,8 +61,8 @@
           <div class="col-md-6">
             <img alt="User Support and Training" src="/images/svh_user.png"><br>
             <Br>
-            <a href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
-                <img alt="Secure Backup" src="/images/svh_secure.png" class="clickable"><Br>
+            <a id="backupservices" href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
+                <img alt="Secure Backup" src="/images/svh_secure.png" class="clickable"><br>
             </a>
             <br>
             <img alt="Photos-Storing and Sharing" src="/images/svh_photos.png"><br>

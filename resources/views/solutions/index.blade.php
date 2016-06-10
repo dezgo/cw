@@ -49,19 +49,23 @@
           <div class="col-md-6">
             <img alt="Virus Removal and Protection" src="/images/svb_virus.png"><br>
             <br>
-            <img alt="Email Issues/Business Email" src="/images/svb_email.png"><br>
+            <a id="emailserviceslink" href="/services/email">
+                <img alt="Email Issues/Business Email" src="/images/svh_email.png" class="clickable"><Br>
+            </a>
             <br>
             <img alt="Troubleshooting" src="/images/svb_troubles.png"><br>
             <br>
             <img alt="Networking" src="/images/svb_network.png"><br>
             <br>
-            <img alt="New Computer Sales and Setup" src="/images/svb_new_comp.png"><br>
+            <a id="systemslink" href="/services/systems">
+                <img alt="New Computer Sales and Setup" src="/images/svh_new_comp.png" class="clickable"><br>
+            </a>
           </div>
           <div class="col-md-6">
             <img alt="User/Staff Support and Training" src="/images/svb_user.png"><br>
             <br>
             <a href="http://partners.carbonite.com/computerwhiz-canberra" target="_blank">
-                <img alt="Secure Backup" src="/images/svb_secure.png"><br>
+                <img alt="Secure Backup" src="/images/svb_secure.png" class="clickable"><br>
             </a>
             <br>
             <img alt="Web Design and Web Hosting" src="/images/svb_web.png"><br>
