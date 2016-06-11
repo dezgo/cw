@@ -27,3 +27,4 @@ Route::get('/contact', 'HomeController@contact');
 Route::post('/contact_send', 'HomeController@contact_send');
 Route::get('/reading_list', 'HomeController@reading_list');
 Route::get('/remote', 'HomeController@remote');
+Route::get('/test', 'HomeController@test');

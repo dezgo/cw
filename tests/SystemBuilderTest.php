@@ -26,8 +26,8 @@ class SystemBuilderTest extends TestCase
 
         $this->press('btnSend')
             ->see(trans('validation.required', ['attribute' => 'name']))
-            ->see(trans('validation.required_without', ['attribute' => 'email', 'values' => 'phone']))
-            ->see(trans('validation.required_without', ['attribute' => 'phone', 'values' => 'email']));
+            ->see(trans('validation.required', ['attribute' => 'email']))
+            ->see(trans('validation.required', ['attribute' => 'phone']));
     }
 
     /**

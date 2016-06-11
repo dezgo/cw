@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use Mail;
 use App\ComponentCategory;
 use App\SystemComponent;
 use App\System;
 use App\Component;
 use Validator;
 use Session;
+use App\Jobs\SendSystemOrderCWEmail;
+use App\Jobs\SendSystemOrderCustomerEmail;
 
 class HomeController extends Controller
 {
@@ -68,8 +69,8 @@ class HomeController extends Controller
     {
         $validator = Validator::make($request->all(), [
                 'name' => 'required',
-                'email' => 'email|required_without:phone',
-                'phone' => 'required_without:email|regex:/^\\(?[01][23478]\\)? ?[0-9\\s]{4,10}$/',
+                'email' => 'email|required',
+                'phone' => 'required|regex:/^\\(?[01][23478]\\)? ?[0-9\\s]{4,10}$/',
             ]);
 
         if ($validator->fails()) {
@@ -83,19 +84,13 @@ class HomeController extends Controller
         $system->email = $request->email;
         $system->save();
 
-      $message = trans('content.system_order_success', ['name' => $system->name]);
-      try {
-        Mail::send('emails.system_order', ['system' => $system], function ($m) use ($system) {
-            $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
-            $m->to('1min-sms@fut.io', 'Derek Gillett')
-              ->subject(trans('content.system_order_subject', ['name' => $system->name]));
-        });
-      }
-      catch (\Exception $e) {
-        return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
-      }
-      $request->session()->forget('system_id');
-      return redirect('/contact')->with('message_success', $message);
+        $message = trans('content.system_order_success', ['name' => $system->name]);
+
+        $this->dispatch(new SendSystemOrderCWEmail($system));
+        $this->dispatch(new SendSystemOrderCustomerEmail($system));
+
+        $request->session()->forget('system_id');
+        return redirect('/contact')->with('message_success', $message);
     }
 
     public function system_order(Request $request)
@@ -160,5 +155,11 @@ class HomeController extends Controller
     public function remote()
     {
         return view('content.remote');
+    }
+
+    public function test()
+    {
+        $system = System::findOrFail(10);
+        return view('emails.system_order_customer', compact('system'));
     }
 }

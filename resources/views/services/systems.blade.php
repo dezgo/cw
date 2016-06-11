@@ -13,17 +13,13 @@ a.component {
 }
 </style>
 
-<h1>New Computer Sales &amp; Set Up</h1>
-Is your computer running slow? It might be slow internet, malware, or maybe it's
-just time for a new one. If your computer is over 5 years old, it's generally
-a good time to consider an upgrade rather than spending money on your existing
-system.<br>
+<h1>Want a new desktop computer?</h1>
+Like magic, get a new computer in place of your old one, with all your data on it,
+programs just the way you like them, and we can even come to you and set it up.<br>
 <br>
 Below is a system builder you can use to pick exactly the sort of computer you
-want. You get to pick every component, and we build it, install the software,
-transfer your old data across to it, and come to you to set it up.<br>
+want. You get to pick every component, and we do the rest.<br>
 <br>
-
 <form method="POST" action="/services/systems">
   {{ csrf_field() }}
 
