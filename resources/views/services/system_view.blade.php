@@ -67,7 +67,7 @@
         </tr>
     </table>
 <Br>
-      <input type='submit' value='Send' class='btn btn-primary'>
+      <input id='btnSend' type='submit' value='Send' class='btn btn-primary'>
       <br><br>
       Or if you want to update something first, go
       <a href='/services/systems/{{ $system->id }}/edit' class='btn btn-default'>Back</a>

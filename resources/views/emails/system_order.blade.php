@@ -11,7 +11,7 @@ Incoming system order!<br />
         <th align="left">Component</th>
         <th align="left">Price</th>
     </thead>
-@foreach ($system->components as $system_component)
+@foreach ($system->system_components as $system_component)
     <tr>
         <td valign="top">
             {{ $system_component->component->component_category->long_name }}

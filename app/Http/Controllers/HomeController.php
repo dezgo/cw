@@ -77,23 +77,23 @@ class HomeController extends Controller
                         ->withInput();
         }
 
-        $system = System::find($request->id);
+        $system = System::findOrFail($request->id);
         $system->name = $request->name;
         $system->phone = $request->phone;
         $system->email = $request->email;
         $system->save();
 
       $message = trans('content.system_order_success', ['name' => $system->name]);
-      try {
+    //   try {
         Mail::send('emails.system_order', ['system' => $system], function ($m) use ($system) {
             $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
-            $m->to('derek@computerwhiz.com.au', 'Derek Gillett')
+            $m->to('1min-sms@fut.io', 'Derek Gillett')
               ->subject(trans('content.system_order_subject', ['name' => $system->name]));
         });
-      }
-      catch (\Exception $e) {
-        return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
-      }
+    //   }
+    //   catch (\Exception $e) {
+        // return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
+    //   }
       $request->session()->forget('system_id');
       return redirect('/contact')->with('message_success', $message);
     }
@@ -101,7 +101,9 @@ class HomeController extends Controller
     public function system_order(Request $request)
     {
         if ($request->system_id <> '') {
-            System::findOrFail($request->system_id)->delete();
+            $system = System::findOrFail($request->system_id);
+            $system->system_components()->delete();
+            $system->delete();
         }
         $system = new System;
         $system->save();

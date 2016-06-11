@@ -83,13 +83,17 @@ transfer your old data across to it, and come to you to set it up.<br>
   <div class="col-md-3">
     <div class="panel panel-default" data-spy="affix" data-offset-top="200">
       <div class="panel-body">
-        <h2>PC Builder</h2>
-        @foreach ($component_categories as $component_category)
-          <i id='{{ $component_category->name }}Status' aria-hidden="true"></i>&nbsp;
-          <a class="component" href="#{{ $component_category->name }}">{{ ucwords($component_category->name,'_') }}</a><br>
-        @endforeach
-        <h4>Total:&nbsp;$<span id="systemTotalPrice">0.00</span></h4>
-        <input type=submit value="Next" class="btn btn-primary" disabled>
+        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            <h2>Status</h2>
+            <small>Click to show/hide</small></a>
+        <div class="collapse" id="collapseExample">
+            @foreach ($component_categories as $component_category)
+              <i id='{{ $component_category->name }}Status' aria-hidden="true"></i>&nbsp;
+              <a class="component" href="#{{ $component_category->name }}">{{ ucwords($component_category->name,'_') }}</a><br>
+            @endforeach
+            <h4>Total:&nbsp;$<span id="systemTotalPrice">0.00</span></h4>
+            <input id='btnNext' type=submit value="Next" class="btn btn-primary" disabled>
+          </div>
       </div>
     </div>
   </div>

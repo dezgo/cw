@@ -1,0 +1,52 @@
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+use App\ComponentCategory;
+
+class SystemBuilderTest extends TestCase
+{
+    public function testBasicSelection()
+    {
+        $this->visit('/services/systems');
+
+        $component_categories = ComponentCategory::all();
+        foreach ($component_categories as $component_category) {
+            $component = $component_category->components[0];
+            $this->select($component->id, 'opt'.$component_category->name);
+        }
+
+        $this->press('btnNext');
+
+        foreach ($component_categories as $component_category) {
+            $component = $component_category->components[0];
+            $this->see($component->description);
+        }
+
+        $this->press('btnSend')
+            ->see(trans('validation.required', ['attribute' => 'name']))
+            ->see(trans('validation.required_without', ['attribute' => 'email', 'values' => 'phone']))
+            ->see(trans('validation.required_without', ['attribute' => 'phone', 'values' => 'email']));
+    }
+
+    /**
+     * @group email
+     */
+    public function testSendOrder()
+    {
+        $this->visit('/services/systems');
+
+        $component_categories = ComponentCategory::all();
+        foreach ($component_categories as $component_category) {
+            $component = $component_category->components[0];
+            $this->select($component->id, 'opt'.$component_category->name);
+        }
+
+        $this->press('btnNext')
+            ->type('Joe the tester', 'name')
+            ->type('a@b.com', 'email')
+            ->press('btnSend')
+            ->see(trans('content.system_order_success', ['name' => 'Joe the tester']));
+    }
+}
