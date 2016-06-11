@@ -84,16 +84,16 @@ class HomeController extends Controller
         $system->save();
 
       $message = trans('content.system_order_success', ['name' => $system->name]);
-    //   try {
+      try {
         Mail::send('emails.system_order', ['system' => $system], function ($m) use ($system) {
             $m->from('mail@computerwhiz.com.au', 'Computer Whiz Mail');
             $m->to('1min-sms@fut.io', 'Derek Gillett')
               ->subject(trans('content.system_order_subject', ['name' => $system->name]));
         });
-    //   }
-    //   catch (\Exception $e) {
-        // return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
-    //   }
+      }
+      catch (\Exception $e) {
+        return back()->withInput()->with('message_error', trans('content.contact_error', ['name' => $request->name]));
+      }
       $request->session()->forget('system_id');
       return redirect('/contact')->with('message_success', $message);
     }

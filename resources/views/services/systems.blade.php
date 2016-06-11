@@ -53,7 +53,11 @@ transfer your old data across to it, and come to you to set it up.<br>
         @if (!$component_category->required)
         <div class="radio">
           <label>
-            <input type="radio" name="opt{{ $component_category->name }}" value="skip" data-price="0">
+            <input type="radio" name="opt{{ $component_category->name }}" value="skip" data-price="0"
+            @if (!empty($system) and !$system->contains_component_in_category($component_category))
+            checked="checked"
+            @endif
+            >
             Skip
           </label>
         </div>
