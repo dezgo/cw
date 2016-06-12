@@ -94,7 +94,9 @@
     </div>
   <div class="col-md-3 text-center">
       <div class="service">
-        <img alt="New Computer Sales" src="/images/sv_new_computer_sales1.png">
+          <a id="systemslink" href="/services/systems">
+              <img alt="New Computer Sales" src="/images/sv_new_computer_sales1.png">
+          </a>
     </div>
   </div>
   <div class="col-md-3 text-center">

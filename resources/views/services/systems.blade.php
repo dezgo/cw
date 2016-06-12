@@ -86,7 +86,7 @@ want. You get to pick every component, and we do the rest.<br>
         <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <h2>Status</h2>
             <small>Click to show/hide</small></a>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse in" id="collapseExample">
             @foreach ($component_categories as $component_category)
               <i id='{{ $component_category->name }}Status' aria-hidden="true"></i>&nbsp;
               <a class="component" href="#{{ $component_category->name }}">{{ ucwords($component_category->name,'_') }}</a><br>
