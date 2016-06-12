@@ -48,10 +48,6 @@
     background-color: #A5061C;
   }
 
-  a:link.menulink, a:visited.menulink {
-    color: white;
-  }
-
   a:hover.menulink {
     color: black;
   }
@@ -74,6 +70,17 @@
   .clickable {
       padding:1px;
       border:1px solid #021a40;
+  }
+
+  .offer {
+      background-color: #0275D8;
+      width: 100%;
+      font-size: 16pt;
+      padding: 5pt;
+  }
+
+  a, a:hover {
+      color: white;
   }
 </style>
 @yield('head')
@@ -106,6 +113,19 @@
           </div>
       </nav>
       @endif
+
+      @if (Request::segment(1) != 'services' or Request::segment(2) != 'systems')
+        <div class="row">
+            <div class="col-md-12">
+                <div class="offer text-center">
+                    <a href="/services/systems">
+                        Click here to check out the new system builder!<br>
+                    </a>
+                </div>
+                <br>
+            </div>
+        </div>
+    @endif
         <div class="row">
           <div class="col-md-6">
             <img alt="Logo" src='/images/logo.png'>
