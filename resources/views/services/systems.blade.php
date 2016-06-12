@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<style scoped>
+<style>
 h2 {
   font-variant: small-caps;
 }
@@ -83,9 +83,9 @@ want. You get to pick every component, and we do the rest.<br>
   <div class="col-md-3">
     <div class="panel panel-default" data-spy="affix" data-offset-top="200">
       <div class="panel-body">
-        <a data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            <h2>Status</h2>
+        <a class="component" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
             <small>Click to show/hide</small></a>
+            <h2>Status</h2>
         <div class="collapse in" id="collapseExample">
             @foreach ($component_categories as $component_category)
               <i id='{{ $component_category->name }}Status' aria-hidden="true"></i>&nbsp;
