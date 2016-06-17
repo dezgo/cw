@@ -3,9 +3,12 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Component extends Model
 {
+    use SoftDeletes;
+    
     public function component_category()
     {
         return $this->belongsTo('App\ComponentCategory', 'category_id');
