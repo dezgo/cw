@@ -83,7 +83,6 @@
       color: white;
   }
 </style>
-@yield('head')
 </head>
 
 <body id="app-layout">
