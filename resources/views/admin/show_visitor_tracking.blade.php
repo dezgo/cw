@@ -15,7 +15,7 @@
     <Tr>
         <td>{{ $visitor->addr }}</td>
         <td>{{ $visitor->user_agent }}</td>
-        <td>{{ $visitor->document_uri }}</td>
+        <td>{{ $visitor->request_uri }}</td>
         <td>{{ $visitor->http_referer }}</td>
         <td>{{ $visitor->updated_at }}</td>
     </tr>

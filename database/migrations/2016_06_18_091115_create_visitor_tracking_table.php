@@ -16,7 +16,7 @@ class CreateVisitorTrackingTable extends Migration
             $table->increments('id');
             $table->string('addr');
             $table->string('user_agent');
-            $table->string('document_uri');
+            $table->string('request_uri');
             $table->string('http_referer')->nullable();
             $table->timestamps();
         });

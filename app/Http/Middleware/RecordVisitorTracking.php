@@ -20,7 +20,7 @@ class RecordVisitorTracking
         $visitor_tracking = new VisitorTracking();
         $visitor_tracking->addr = $request->server('REMOTE_ADDR');
         $visitor_tracking->user_agent = $request->server('HTTP_USER_AGENT');
-        $visitor_tracking->document_uri = $request->server('DOCUMENT_URI');
+        $visitor_tracking->request_uri = $request->server('REQUEST_URI');
         $visitor_tracking->http_referer = $request->server('HTTP_REFERER');
         $visitor_tracking->save();
 
