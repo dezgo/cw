@@ -29,7 +29,11 @@ Route::get('/reading_list', 'HomeController@reading_list');
 Route::get('/remote', 'HomeController@remote');
 Route::get('/test', 'HomeController@test');
 
-Route::group(['middleware' => 'auth'], function () {
+Route::group(['middleware' => 'admin'], function () {
     Route::resource('component_category', 'ComponentCategoryController');
     Route::resource('component', 'ComponentController');
+    Route::get('phpinfo', function () {
+        return phpinfo();
+    });
+    Route::get('/visitors', 'AdminController@visitors');
 });
