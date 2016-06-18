@@ -96,23 +96,23 @@
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));</script>
     <div class="container">
-      @if (Auth::check())
-      <nav class="navbar navbar-default">
-          <div class="collapse navbar-collapse" id="app-navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                <ul class="dropdown-menu" role="menu">
-                  <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+        @if (Auth::check())
+        <nav class="navbar navbar-default">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/components">Components</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
+                                        {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-          </div>
-      </nav>
-      @endif
+            </div>
+        </nav>
+        @endif
 
       @if (Request::segment(1) != 'services' or Request::segment(2) != 'systems')
         <div class="row">

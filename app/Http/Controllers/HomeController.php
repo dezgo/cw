@@ -65,6 +65,9 @@ class HomeController extends Controller
         }
     }
 
+    // validate system order details
+    // save new details
+    // email system order to CW and customer
     public function system_order_send(Request $request)
     {
         $validator = Validator::make($request->all(), [
