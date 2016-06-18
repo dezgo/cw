@@ -100,7 +100,7 @@
         <nav class="navbar navbar-default">
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/components">Components</a></li>
+                    <li><a href="/component">Components</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle menulink" data-toggle="dropdown" role="button" aria-expanded="false">
                                         {{ Auth::user()->name }} <span class="caret"></span>

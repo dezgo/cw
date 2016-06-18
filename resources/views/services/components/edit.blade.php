@@ -22,7 +22,9 @@
     </div>
 
     <div class="form-group">
-        <label for="price">Price</label>
+        <label for="price">Price</label>&nbsp;&nbsp;&nbsp;
+        <i id="markUp" class="fa fa-arrow-up" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;
+        <i id="markDown" class="fa fa-arrow-down" aria-hidden="true"></i>
         <input type="text" class="form-control" id="price" name="price" value="{{ $component->price }}">
     </div>
 
@@ -44,4 +46,28 @@
     <input type="submit" class="btn btn-primary" value="Update">
 </form>
 
+@stop
+
+@section('head')
+<script>
+$(document).ready(function() {
+
+    $('#markUp').click(function() {
+        var price = $("#price").val()*1.2;
+        $("#price").val(price.toFixed(2));
+    });
+    $('#markUp').hover(function() {
+        $(this).css('cursor','pointer');
+    });
+
+    $('#markDown').click(function() {
+        var price = $("#price").val()/1.2;
+        $("#price").val(price.toFixed(2));
+    });
+    $('#markDown').hover(function() {
+        $(this).css('cursor','pointer');
+    });
+
+});
+</script>
 @stop

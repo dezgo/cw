@@ -19,7 +19,8 @@ class ComponentController extends Controller
     {
         $components = DB::table('components')
             ->join('component_categories', 'components.category_id', '=', 'component_categories.id')
-            ->select('components.id', 'component_categories.long_name', 'components.description', 'components.price')
+            ->select('components.id', 'component_categories.long_name', 'components.description',
+                'components.price', 'components.updated_at')
             ->orderBy('component_categories.long_name')
             ->orderBy('components.description')
             ->get();
