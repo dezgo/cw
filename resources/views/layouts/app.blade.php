@@ -147,6 +147,8 @@
                   <a id="serviceslink" class="menulink" href="/services">Home Services</a></li>
               <li role="presentation"{!! Request::segment(1) == 'solutions' ? ' class="active"' : '' !!}>
                   <a id="solutionslink" class="menulink" href="/solutions">Business Solutions</a></li>
+              <li role="presentation"{!! Request::segment(1) == 'blog' ? ' class="active"' : '' !!}>
+                  <a id="bloglink" class="menulink" href="/blog">Blog</a></li>
               <li role="presentation"{!! Request::segment(1) == 'contact' ? ' class="active"' : '' !!}>
                   <a id="contactlink" class="menulink" href="/contact">Contact</a></li>
             </ul>

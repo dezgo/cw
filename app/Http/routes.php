@@ -23,6 +23,8 @@ Route::get('/services/systems/{system}/edit', 'HomeController@edit_system');
 Route::post('/services/systems', 'HomeController@system_order');
 Route::post('/services/systems_send', 'HomeController@system_order_send');
 Route::get('/solutions', 'HomeController@solutions');
+Route::get('/blog', 'HomeController@blog');
+Route::get('/blog/{post}', 'HomeController@blog');
 Route::get('/contact', 'HomeController@contact');
 Route::post('/contact_send', 'HomeController@contact_send');
 Route::get('/reading_list', 'HomeController@reading_list');

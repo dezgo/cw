@@ -165,4 +165,14 @@ class HomeController extends Controller
         $system = System::findOrFail(10);
         return view('emails.system_order_customer', compact('system'));
     }
+
+    public function blog($post = "")
+    {
+        switch ($post) {
+            case 'spotify':
+                return view('content.blog.spotify');
+            default:
+                return view('content.blog');
+        }
+    }
 }
