@@ -2,9 +2,14 @@
 
 @section('head')
 
-<meta property="og:image" content="{{ url('/images/blog/spotify/capture1_sm.jpg') }}"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:type" content="article"/>
 <meta property="og:title" content="Free Music!"/>
 <meta property="og:description" content="Streaming music has opened new options for music on demand"/>
+<meta property="og:url" content="{{ url('/blog/spotify') }}"/>
+<meta property="og:site_name" content="Computer Whiz - Canberra"/>
+<meta property="og:image" content="{{ url('/images/blog/spotify/capture1_sm.jpg') }}"/>
+
 
 @stop
 

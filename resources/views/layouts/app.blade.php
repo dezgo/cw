@@ -14,13 +14,6 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="description" content="Offering a high-quality, timely, professional IT support service to home users and small to medium sized businesses in Canberra and Queanbeyan."/>
-    <meta property="og:locale" content="en_US"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="High-quality IT support services"/>
-    <meta property="og:description" content="Offering a high-quality, timely, professional IT support service to home users and small to medium sized businesses in Canberra and Queanbeyan."/>
-    <meta property="og:url" content="{{ url('') }}"/>
-    <meta property="og:site_name" content="Computer Whiz - Canberra"/>
-    <meta property="og:image" content="{{ url('/images/logo.png') }}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="robots" content="index, follow" />
     <title>Computer Whiz - Canberra</title>
