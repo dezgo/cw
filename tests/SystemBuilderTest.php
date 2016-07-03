@@ -46,6 +46,7 @@ class SystemBuilderTest extends TestCase
         $this->press('btnNext')
             ->type('Joe the tester', 'name')
             ->type('a@b.com', 'email')
+            ->type('0412234567', 'phone')
             ->press('btnSend')
             ->see(trans('content.system_order_success', ['name' => 'Joe the tester']));
     }

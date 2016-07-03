@@ -1,5 +1,14 @@
 @extends('layouts.app')
 
+@section('head')
+
+<meta property="og:image" content="{{ url('/images/blog/spotify/capture1_sm.jpg') }}"/>
+<meta property="og:title" content="Free Music!"/>
+<meta property="og:description" content="Streaming music has opened new options for music on demand"/>
+
+@stop
+
+
 @section('content')
 
 <style>

@@ -12,6 +12,7 @@ use Validator;
 use Session;
 use App\Jobs\SendSystemOrderCWEmail;
 use App\Jobs\SendSystemOrderCustomerEmail;
+use Mail;
 
 class HomeController extends Controller
 {
