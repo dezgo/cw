@@ -1,0 +1,59 @@
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.fa-btn {
+  margin-right: 6px;
+}
+
+.menubar {
+  background-color: #A5061C;
+}
+
+a:hover.menulink {
+  color: black;
+}
+
+.boxed-row {
+  background-color: #10477C;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -15px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #B21F24;
+}
+
+.clickable {
+    padding:1px;
+    border:1px solid #021a40;
+}
+
+.offer {
+    background-color: #0275D8;
+    width: 100%;
+    font-size: 16pt;
+    padding: 5pt;
+}
+
+a, a:hover {
+    color: white;
+}
+
+a.extlink, a.extlink:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+a.extlinknu, a.extlinknu:hover {
+  text-decoration: none;
+  color: black;
+}

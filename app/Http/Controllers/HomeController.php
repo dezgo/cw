@@ -172,6 +172,8 @@ class HomeController extends Controller
         switch ($post) {
             case 'spotify':
                 return view('content.blog.spotify');
+            case 'never10':
+                return view('content.blog.never10');
             default:
                 return view('content.blog');
         }

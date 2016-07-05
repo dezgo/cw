@@ -16,6 +16,8 @@
     <meta name="description" content="Offering a high-quality, timely, professional IT support service to home users and small to medium sized businesses in Canberra and Queanbeyan."/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="robots" content="index, follow" />
+    <meta property="og:locale" content="en_US"/>
+    <meta property="og:site_name" content="Computer Whiz - Canberra"/>
     <title>Computer Whiz - Canberra</title>
     <link rel="icon"
           type="image/png"
@@ -25,57 +27,6 @@
     <script> (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','//www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-75871864-1', 'auto'); ga('send', 'pageview'); </script>
     @yield('head')
 
-<style>
-  body {
-    font-family: 'Lato';
-    margin-top: 5px;
-    margin-left: 15px;
-    margin-right: 15px;
-  }
-
-  .fa-btn {
-    margin-right: 6px;
-  }
-
-  .menubar {
-    background-color: #A5061C;
-  }
-
-  a:hover.menulink {
-    color: black;
-  }
-
-  .boxed-row {
-    background-color: #10477C;
-    font-family: 'Arial Narrow', Arial, sans-serif;
-    font-size: 16px;
-    color: white;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-left: -15px;
-    text-align: center;
-  }
-
-  h1, h2, h3 {
-    color: #B21F24;
-  }
-
-  .clickable {
-      padding:1px;
-      border:1px solid #021a40;
-  }
-
-  .offer {
-      background-color: #0275D8;
-      width: 100%;
-      font-size: 16pt;
-      padding: 5pt;
-  }
-
-  a, a:hover {
-      color: white;
-  }
-</style>
 </head>
 
 <body id="app-layout">

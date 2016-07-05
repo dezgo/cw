@@ -10137,4 +10137,64 @@ body .ui-tooltip {
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  margin-top: 5px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.fa-btn {
+  margin-right: 6px;
+}
+
+.menubar {
+  background-color: #A5061C;
+}
+
+a:hover.menulink {
+  color: black;
+}
+
+.boxed-row {
+  background-color: #10477C;
+  font-family: 'Arial Narrow', Arial, sans-serif;
+  font-size: 16px;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: -15px;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  color: #B21F24;
+}
+
+.clickable {
+    padding:1px;
+    border:1px solid #021a40;
+}
+
+.offer {
+    background-color: #0275D8;
+    width: 100%;
+    font-size: 16pt;
+    padding: 5pt;
+}
+
+a, a:hover {
+    color: white;
+}
+
+a.extlink, a.extlink:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+a.extlinknu, a.extlinknu:hover {
+  text-decoration: none;
+  color: black;
+}
+
 /*# sourceMappingURL=all.css.map */

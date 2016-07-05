@@ -11,6 +11,9 @@
     <br>
     <h4><b>Office:</b> 02 6112 8025</h4>
     <h4><b>Mobile:</b> 0474 029 265</h4>
+    <br>
+    <h4><b>Twitter:</b> <a class="extlink" href="https://twitter.com/computerwhizcbr">@computerwhizcbr</a></h4>
+    <h4><b>Facebook:</b> <a class="extlink" href="https://www.facebook.com/computerwhizcbr">@computerwhizcbr</a></h4>
   </div>
   <div class="col-md-7 col-md-offset-1">
     <h1>Contact</h1>

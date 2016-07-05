@@ -2,12 +2,10 @@
 
 @section('head')
 
-<meta property="og:locale" content="en_US"/>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Free Music!"/>
 <meta property="og:description" content="Streaming music has opened new options for music on demand"/>
 <meta property="og:url" content="{{ url('/blog/spotify') }}"/>
-<meta property="og:site_name" content="Computer Whiz - Canberra"/>
 <meta property="og:image" content="{{ url('/images/blog/spotify/capture1_sm.jpg') }}"/>
 
 
@@ -16,21 +14,12 @@
 
 @section('content')
 
-<style>
-body {
-        font-family: Helvetica, Arial, sans-serif;
-}
-a.extlink {
-  text-decoration: underline;
-  color: black;
-}
-</style>
-
 <section class="mbr-section" id="header3-78">
     <div class="mbr-section__container container mbr-section__container--first">
         <div class="mbr-header mbr-header--wysiwyg row">
             <div class="col-sm-12">
                 <h3 class="mbr-header__text">FREE MUSIC!</h3>
+                <h4>Streaming music has opened new options for music on demand.</h4>
                 <p class="mbr-header__subtext">By Derek Gillett posted 1 July, 2016</p>
             </div>
         </div>
@@ -60,16 +49,21 @@ a.extlink {
             it does, and how you can get started.<br>
             <br>
             <h4>Download</h4>
-            First step, head on over to <a class="extlink" href="https://www.spotify.com" target="_blank">
-            https://www.spotify.com</a>. You'll see their homepage, which currently looks like this:<br>
+            First step, head on over to
+            <a class="extlink" href="https://www.spotify.com" target="_blank">https://www.spotify.com</a>.
+            You'll see their homepage, which currently looks like this:<br>
             <br>
+            <a class="extlink" href="https://www.spotify.com" target="_blank">
             <img src="/images/blog/spotify/capture1_sm.jpg"><br>
+            </a>
             <br>
             Click 'Download', which will take you to their signup page. You'll need to fill this in
             to continue. You could sign up with your Facebook account, or just create a new account
             for Spotify.
             <br>
+            <a class="extlink" href="https://www.spotify.com/au/signup/" target="_blank">
             <img src="/images/blog/spotify/capture2.jpg"><br>
+            </a>
             <br>
             Once you've created your account, the software should download automatically.<br>
             <br>
