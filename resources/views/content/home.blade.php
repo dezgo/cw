@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('head')
+<meta name="title" content="Computer Technical Support &amp; Services Canberra | Home Computer Help Canberra"/>
+<meta name="description" content="Offering a high-quality, timely, professional IT support service to home users and small to medium sized businesses in Canberra and Queanbeyan."/>
+
 <style>
   .splash {
     background-image: url('/images/home_bg.png');

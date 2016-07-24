@@ -13,7 +13,6 @@
 <!--<![endif]-->
 <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Offering a high-quality, timely, professional IT support service to home users and small to medium sized businesses in Canberra and Queanbeyan."/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="robots" content="index, follow" />
     <meta property="og:locale" content="en_US"/>
@@ -82,7 +81,7 @@
           <div class="col-md-12 menubar">
             <ul class="nav nav-tabs">
               <li role="presentation"{!! Request::segment(1) == 'home' ? ' class="active"' : '' !!}>
-                  <a id="homelink" class="menulink" href="/home">Home</a></li>
+                  <a id="homelink" class="menulink" href="/">Home</a></li>
               <li role="presentation"{!! Request::segment(1) == 'about' ? ' class="active"' : '' !!}>
                   <a id="aboutlink" class="menulink" href="/about">About</a></li>
               <li role="presentation"{!! Request::segment(1) == 'remote' ? ' class="active"' : '' !!}>

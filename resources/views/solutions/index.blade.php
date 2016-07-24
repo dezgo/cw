@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head')
+<meta name="title" content="Small Business IT Support &amp; Cloud Services Specialist in Canberra">
+@stop
+
 @section('content')
 <div class="row">
     <div class="col-md-5">

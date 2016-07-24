@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head')
+<meta name="title" content="Blog">
+@stop
+
 @section('content')
 
 <h1>Blog</h1>

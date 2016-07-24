@@ -2,6 +2,7 @@
 
 @section('head')
 
+<meta name="title" content="Don't want windows 10?">
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Don't want windows 10?"/>
 <meta property="og:description" content="Microsoft is offering Windows 10 as a free upgrade for eligible Windows 7 and 8/8.1 users. But it's not necessarily a good move."/>

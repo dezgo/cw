@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('head')
+<meta name="title" content="Email Services"/>
+@stop
+
 @section('content')
 <style scoped>
 .top {

@@ -13,8 +13,7 @@
 
 Route::auth();
 
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@home');
+Route::get('/', 'HomeController@home');
 Route::get('/about', 'HomeController@about');
 Route::get('/services', 'HomeController@services');
 Route::get('/services/email', 'HomeController@services_email');

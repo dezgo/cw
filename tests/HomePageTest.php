@@ -6,17 +6,11 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class HomePageTest extends TestCase
 {
-    public function testRedirectToHome()
-    {
-        $response = $this->call('GET', '/');
-        $this->assertEquals(302, $response->status());
-    }
-
     public function testHomeLink()
     {
         $this->visit('/')
             ->click('homelink')
-            ->seePageIs('/home');
+            ->seePageIs('/');
     }
 
     public function testAboutLink()
