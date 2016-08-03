@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-<meta name="title" content="Email Services"/>
+<title>Email Services</title>
 @stop
 
 @section('content')

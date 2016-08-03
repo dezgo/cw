@@ -2,7 +2,7 @@
 
 @section('head')
 
-<meta name="title" content="FREE MUSIC!">
+<title>FREE MUSIC!</title>
 <meta property="og:type" content="article"/>
 <meta property="og:title" content="Free Music!"/>
 <meta property="og:description" content="Streaming music has opened new options for music on demand"/>

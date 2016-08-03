@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-<meta name="title" content="Computer Virus Removal in Canberra, ACT | Services">
+<title>Computer Virus Removal in Canberra, ACT | Services</title>
 @stop
 
 @section('content')

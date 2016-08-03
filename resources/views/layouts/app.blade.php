@@ -17,7 +17,6 @@
     <meta name="robots" content="index, follow" />
     <meta property="og:locale" content="en_US"/>
     <meta property="og:site_name" content="Computer Whiz - Canberra"/>
-    <title>Computer Whiz - Canberra</title>
     <link rel="icon"
           type="image/png"
           href="/images/favicon.png">

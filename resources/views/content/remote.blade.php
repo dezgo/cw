@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('head')
-<meta name="title" content="Remote IT Support Canberra | Phone Computer Support Canberra">
+<title>Remote IT Support Canberra | Phone Computer Support Canberra</title>
 @stop
 
 @section('content')
